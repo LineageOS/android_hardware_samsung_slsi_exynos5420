@@ -1099,6 +1099,11 @@ void terminateDaemon(
     LOG_E("Signal %d received\n", signum);
 }
 
+static long getdtablesize(void)
+{
+    return sysconf(_SC_OPEN_MAX);
+}
+
 //------------------------------------------------------------------------------
 /**
  * Main entry of the MobiCore Driver Daemon.
