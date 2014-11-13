@@ -14,9 +14,7 @@
  * limitations under the License.
  */
 
-#ifdef HAVE_ANDROID_OS      // just want PAGE_SIZE define
-# include <asm/page.h>
-#else
+#ifndef HAVE_ANDROID_OS      // just want PAGE_SIZE define
 # include <sys/user.h>
 #endif
 #include <limits.h>
